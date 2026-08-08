@@ -32,7 +32,7 @@
 2. 克隆仓库并进入目录：
 
 ```bash
-git clone https://github.com/<your-account>/usst-beamer-template.git
+git clone https://github.com/usstxw/usst-beamer-template.git
 cd usst-beamer-template
 ```
 
