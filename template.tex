@@ -1,0 +1,106 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=FandolHei-Regular.otf]{FandolSong-Regular.otf}
+\setCJKsansfont[BoldFont=FandolHei-Regular.otf]{FandolHei-Regular.otf}
+\setCJKmonofont[BoldFont=FandolHei-Regular.otf]{FandolFang-Regular.otf}
+
+\usetheme{USST}
+\usepackage{amsmath,amssymb,booktabs,array,graphicx}
+
+\newcommand{\titleplaceholder}{上海理工大学汇报模板}
+\newcommand{\subtitleplaceholder}{适用于课程展示、读书报告与学术汇报}
+\newcommand{\authorplaceholder}{姓名}
+\newcommand{\instituteplaceholder}{学院}
+
+\title[\titleplaceholder]{\titleplaceholder}
+\subtitle{\subtitleplaceholder}
+\author{\authorplaceholder}
+\institute{\instituteplaceholder}
+\date{\today}
+
+\begin{document}
+
+\ussttitleframe
+\usstoutlineframe
+
+\section{模板说明}
+\begin{frame}{模板说明}
+\large
+这是一套为上海理工大学学生整理的 Beamer 汇报模板，保留了校徽与主视觉风格，也尽量让排版保持简洁、正式和清晰。
+
+\vspace{0.3cm}
+\begin{itemize}
+  \item 修改封面信息即可快速开始使用
+  \item 使用 \texttt{\textbackslash section\{\}} 可自动生成目录
+  \item 建议每页只表达一个核心信息
+\end{itemize}
+\end{frame}
+
+\section{版式示例}
+\begin{frame}{双栏版式示例}
+\begin{columns}[T,onlytextwidth]
+\column{0.56\textwidth}
+\large
+\textbf{左侧内容区}
+\begin{itemize}
+  \item 适合放研究背景、方法步骤或结论概述
+  \item 文字建议分成 3 到 5 个短点
+  \item 段落过长时可以拆成两页展示
+\end{itemize}
+
+\column{0.40\textwidth}
+\large
+\textbf{右侧内容区}
+\begin{itemize}
+  \item 适合放图片、对比要点或补充说明
+  \item 也可以替换成图表、流程图或公式
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{公式与定义示例}
+\large
+这页适合展示定义、公式或关键结论：
+\[
+f(x)=x^2+2x+1,\qquad x^\star=-1
+\]
+
+\vspace{0.25cm}
+\begin{itemize}
+  \item 公式下方建议补一句解释，帮助听众快速理解
+  \item 如果公式较长，可以只保留最关键的一步
+\end{itemize}
+\end{frame}
+
+\section{内容建议}
+\begin{frame}{表格示例}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}}
+\toprule
+\textbf{页面类型} & \textbf{适合内容} & \textbf{使用建议}\\
+\midrule
+封面页 & 题目、姓名、单位 & 信息保持简洁\\
+目录页 & 汇报结构 & 控制在 4 到 6 部分\\
+总结页 & 结论与展望 & 用短句强化重点\\
+\bottomrule
+\end{tabular}
+
+\vspace{0.35cm}
+\large
+如果你的内容以图片或实验结果为主，也可以把表格页直接换成图文页。
+\end{frame}
+
+\section{结束总结}
+\begin{frame}{总结}
+\large
+\begin{itemize}
+  \item 这套模板保留了上海理工大学的视觉识别元素
+  \item 结构清晰，适合日常课程与学术汇报场景
+  \item 你可以在此基础上继续替换文字、图片与配色细节
+\end{itemize}
+\end{frame}
+
+\usstthanksframe
+
+\end{document}

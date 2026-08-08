@@ -1,0 +1,111 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeUSST}[2026/06/16 USST Beamer theme]
+
+\RequirePackage{graphicx}
+\RequirePackage[absolute,overlay]{textpos}
+
+\mode<presentation>
+
+\providecommand{\usstlogopath}{assets}
+\newcommand{\usstredlogo}{\usstlogopath/usst_logo_red.png}
+\newcommand{\usstwhitelogo}{\usstlogopath/usst_logo_white.png}
+
+\definecolor{usstred}{HTML}{8F3030}
+\definecolor{usstdeep}{HTML}{750909}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=usstdeep,bg=white}
+\setbeamercolor{title}{fg=white,bg=usstred}
+\setbeamercolor{structure}{fg=usstred}
+\setbeamercolor{section number projected}{fg=white,bg=usstred}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{section number projected}{series=\bfseries}
+\setbeamertemplate{section in toc}[circle]
+
+\setbeamertemplate{frametitle}{%
+  \vspace{0.18cm}\insertframetitle\par
+  \color{usstred}\rule{0.58\paperwidth}{0.5pt}
+}
+\addtobeamertemplate{frametitle}{}{%
+  \begin{textblock*}{3.1cm}(12.2cm,0.18cm)
+    \includegraphics[width=3.0cm]{\usstredlogo}
+  \end{textblock*}
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.65\paperwidth,ht=2.5ex,dp=1.2ex,leftskip=.4cm]{author in head/foot}
+      \color{usstred}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.5ex,dp=1.2ex,rightskip=.4cm plus1fil]{date in head/foot}
+      \hfill \insertshortdate\quad \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\makeatletter
+
+\newcommand{\ussttitleframe}{%
+  {%
+  \setbeamercolor{background canvas}{bg=usstred}
+  \setbeamertemplate{footline}{}
+  \begin{frame}[plain]
+    \centering
+    \vspace{0.55cm}
+    \includegraphics[width=0.48\textwidth]{\usstwhitelogo}
+
+    \vspace{1.0cm}
+    {\color{white}\bfseries\LARGE \inserttitle\par}
+    \ifx\insertsubtitle\@empty\else
+      \vspace{0.25cm}
+      {\color{white}\large \insertsubtitle\par}
+    \fi
+
+    \vspace{0.35cm}
+    {\color{white}\rule{0.78\textwidth}{0.5pt}}
+
+    \vspace{0.35cm}
+    {\color{black}\bfseries
+      \makebox[0.72\textwidth][c]{\insertinstitute\hspace{2.5em}\insertauthor}%
+    }
+
+    \vfill
+    {\color{white}\hfill \insertdate\hspace{0.5cm}}
+  \end{frame}
+  }%
+}
+
+\newcommand{\usstoutlineframe}[1][Outline]{%
+  \begin{frame}{#1}
+  \large
+  \tableofcontents
+  \end{frame}
+}
+
+\newcommand{\usstthanksframe}[1][THANK YOU FOR YOUR ATTENTION!]{%
+  {%
+  \setbeamercolor{background canvas}{bg=usstred}
+  \setbeamertemplate{footline}{}
+  \begin{frame}[plain]
+    \centering
+    \vspace{0.75cm}
+    \includegraphics[width=0.54\textwidth]{\usstwhitelogo}
+
+    \vspace{1.25cm}
+    {\color{black}\bfseries\Huge THANKS!}
+
+    \vspace{0.55cm}
+    {\color{white}\rule{0.70\textwidth}{0.5pt}}
+
+    \vspace{0.25cm}
+    {\color{white}\bfseries #1}
+  \end{frame}
+  }%
+}
+
+\makeatother
+\mode<all>
